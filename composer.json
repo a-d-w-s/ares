@@ -1,0 +1,49 @@
+{
+    "name": "a-d-w-s/ares",
+    "description": "Library for obtaining information about a company from the public register",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/a-d-w-s/ares",
+    "support": {
+        "source":"https://github.com/a-d-w-s/ares",
+        "issues":"https://github.com/a-d-w-s/ares/issues"
+    },
+    "keywords": [
+        "php", "ares"
+    ],
+    "authors": [
+        {
+            "name": "Jan Brabec",
+            "role": "Author",
+            "email": "info@adws.cz"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5.5 || ^11.1.3 || ^12",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ADWS\\Ares\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ADWS\\Ares\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse",
+        "cs-check": "phpcs --colors -p",
+        "cs-fix": "phpcbf --colors -p",
+        "test": "phpunit --colors=always",
+        "check": "composer analyse && composer test && composer cs-check"
+    }
+}
